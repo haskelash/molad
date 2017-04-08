@@ -31,7 +31,7 @@ import UIKit
         let point = gr.location(in: self)
         let diffFromCenter = CGPoint(x: point.x-bounds.midX, y: point.y-bounds.midY)
 
-        var newAngle :CGFloat!
+        var newAngle: CGFloat!
         if diffFromCenter.x < 0 {
             //arcTan onlty returns -90 to 90, so need to adjust for 90 to 270
             newAngle = atan(diffFromCenter.y/diffFromCenter.x) + .pi
