@@ -43,6 +43,22 @@ import UIKit
             let angleDiff = prevDragAngle - newAngle
 
             chalakimAngle = chalakimAngle - angleDiff
+
+            var newAngleAdusted = newAngle!
+            if prevDragPoint.x < bounds.midX && prevDragAngle > 0 && newAngle < 0 {
+                //crossing from 270 to -90
+                while newAngleAdusted < prevDragAngle {
+                    newAngleAdusted += (.pi*2)
+                }
+            } else if point.x < bounds.midX && prevDragAngle < 0 && newAngle > 0 {
+                //crossing from -90 to 270
+                while newAngleAdusted > prevDragAngle {
+                    newAngleAdusted -= (.pi*2)
+                }
+            }
+
+            let hoursDiff = (prevDragAngle - newAngleAdusted)/24
+            hoursAngle -= hoursDiff
         }
 
         prevDragAngle = newAngle
