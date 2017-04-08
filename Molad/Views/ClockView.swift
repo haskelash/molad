@@ -42,7 +42,7 @@ import UIKit
         if gr.state == .changed {
             let angleDiff = prevDragAngle - newAngle
 
-            chalakimAngle = chalakimAngle - angleDiff
+            chalakimAngle -= angleDiff
 
             var newAngleAdusted = newAngle!
             if prevDragPoint.x < bounds.midX && prevDragAngle > 0 && newAngle < 0 {
