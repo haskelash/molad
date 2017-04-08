@@ -29,4 +29,22 @@ import UIKit
         ctx.setFillColor(UIColor.black.cgColor)
         ctx.drawPath(using: .fill)
     }
+
+    private func drawTicks(rect: CGRect, ctx: CGContext,
+                   radius: CGFloat, border: CGFloat) {
+        let tickStartPoints = pointsAroundCircle(rect: rect,
+                                                 radius: radius,
+                                                 ticks: 48)
+        let path = CGMutablePath()
+        for (i, point) in tickStartPoints.enumerated() {
+            let fraction: CGFloat = i % 2 == 0 ? 0.08 : 0.05
+            let tickEndX = point.x + fraction*(rect.midX - point.x)
+            let tickEndY = point.y + fraction*(rect.midY - point.y)
+            path.move(to: point)
+            path.addLine(to: CGPoint(x: tickEndX, y: tickEndY))
+            ctx.addPath(path)
+        }
+        ctx.setLineWidth(border/2)
+        ctx.strokePath()
+    }
 }
