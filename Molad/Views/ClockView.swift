@@ -10,6 +10,26 @@ import UIKit
 
 @IBDesignable class ClockView: UIView {
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpLayers()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setUpLayers()
+    }
+
+    private func setUpLayers() {
+        hourHand.strokeColor = UIColor.black.cgColor
+        hourHand.lineWidth = 4
+        layer.addSublayer(hourHand)
+
+        chalakimHand.strokeColor = UIColor.red.cgColor
+        chalakimHand.lineWidth = 2
+        layer.addSublayer(chalakimHand)
+    }
+
     override func draw(_ rect: CGRect) {
         guard let ctx = UIGraphicsGetCurrentContext() else { return }
         let border: CGFloat = 5
