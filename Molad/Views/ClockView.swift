@@ -10,6 +10,18 @@ import UIKit
 
 @IBDesignable class ClockView: UIView {
 
+    override func draw(_ rect: CGRect) {
+        guard let ctx = UIGraphicsGetCurrentContext() else { return }
+        let border: CGFloat = 5
+        let diameter = min(rect.size.width, rect.size.height) - border
+        let radius = diameter / 2
+
+        drawClock(rect: rect, ctx: ctx, radius: radius, border: border)
+        drawTicks(rect: rect, ctx: ctx, radius: radius, border: border)
+        drawText(rect: rect, ctx: ctx, radius: radius)
+        drawHands(rect: rect, ctx: ctx, radius: radius)
+    }
+
     private func pointsAroundCircle(rect: CGRect,
                             radius: CGFloat,
                             ticks: Int,
