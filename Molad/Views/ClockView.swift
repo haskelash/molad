@@ -105,4 +105,21 @@ import UIKit
         ctx.translateBy(x: 0, y: rect.height)
         ctx.scaleBy(x: 1.0, y: -1.0)
     }
+
+    private func drawHands(rect: CGRect, ctx: CGContext, radius: CGFloat) {
+        //chalakim hand
+        let handPath = CGMutablePath()
+        handPath.move(to: CGPoint(x: rect.midX + -0.1*radius*cos(chalakimAngle),
+                                  y: rect.midY + -0.1*radius*sin(chalakimAngle)))
+        handPath.addLine(to: CGPoint(x: rect.midX + 0.76*radius*cos(chalakimAngle),
+                                     y: rect.midY + 0.76*radius*sin(chalakimAngle)))
+        chalakimHand.path = handPath
+
+        //hour hand
+        let hourHandPath = CGMutablePath()
+        hourHandPath.move(to: CGPoint(x: rect.midX, y: rect.midY))
+        hourHandPath.addLine(to: CGPoint(x: rect.midX + 0.6*radius*cos(hoursAngle),
+                                         y: rect.midY + 0.6*radius*sin(hoursAngle)))
+        hourHand.path = hourHandPath
+    }
 }
