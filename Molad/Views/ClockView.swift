@@ -21,6 +21,12 @@ import UIKit
         }
     }
 
+    private var hoursAngle: CGFloat = 0
+    private var prevDragAngle: CGFloat = 0
+    private var prevDragPoint = CGPoint(x: 0, y: 0)
+    private var chalakimHand = CAShapeLayer()
+    private var hourHand = CAShapeLayer()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpLayers()
