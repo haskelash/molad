@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable class ClockView: UIView {
-    var chalakimAngle: CGFloat = -.pi/2 {
+    private var chalakimAngle: CGFloat = -.pi/2 {
         didSet {
             while chalakimAngle < -.pi/2 {
                 chalakimAngle += .pi*2
