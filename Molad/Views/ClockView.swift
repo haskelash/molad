@@ -27,6 +27,22 @@ import UIKit
     private var chalakimHand = CAShapeLayer()
     private var hourHand = CAShapeLayer()
 
+    @IBAction func drag(gr: UIPanGestureRecognizer) {
+        let point = gr.location(in: self)
+        let diffFromCenter = CGPoint(x: point.x-bounds.midX, y: point.y-bounds.midY)
+
+        var newAngle :CGFloat!
+        if diffFromCenter.x < 0 {
+            //arcTan onlty returns -90 to 90, so need to adjust for 90 to 270
+            newAngle = atan(diffFromCenter.y/diffFromCenter.x) + .pi
+        } else {
+            newAngle = atan(diffFromCenter.y/diffFromCenter.x)
+        }
+
+        prevDragAngle = newAngle
+        prevDragPoint = point
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpLayers()
