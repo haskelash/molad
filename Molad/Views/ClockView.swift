@@ -21,7 +21,17 @@ import UIKit
         }
     }
 
-    private var hoursAngle: CGFloat = 0
+    private var hoursAngle: CGFloat = 0 {
+        didSet {
+            while hoursAngle < -.pi/2 {
+                hoursAngle += .pi*2
+            }
+            while hoursAngle > .pi*3/2 {
+                hoursAngle -= .pi*2
+            }
+        }
+    }
+
     private var prevDragAngle: CGFloat = 0
     private var prevDragPoint = CGPoint(x: 0, y: 0)
     private var chalakimHand = CAShapeLayer()
