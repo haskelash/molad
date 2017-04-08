@@ -39,6 +39,12 @@ import UIKit
             newAngle = atan(diffFromCenter.y/diffFromCenter.x)
         }
 
+        if gr.state == .changed {
+            let angleDiff = prevDragAngle - newAngle
+
+            chalakimAngle = chalakimAngle - angleDiff
+        }
+
         prevDragAngle = newAngle
         prevDragPoint = point
     }
