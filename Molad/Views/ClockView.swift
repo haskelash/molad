@@ -9,6 +9,17 @@
 import UIKit
 
 @IBDesignable class ClockView: UIView {
+    var chalakimAngle: CGFloat = -.pi/2 {
+        didSet {
+            while chalakimAngle < -.pi/2 {
+                chalakimAngle += .pi*2
+            }
+            while chalakimAngle > .pi*3/2 {
+                chalakimAngle -= .pi*2
+            }
+            setNeedsDisplay()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
