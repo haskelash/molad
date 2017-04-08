@@ -9,6 +9,21 @@
 import UIKit
 
 @IBDesignable class ClockView: UIView {
+
+    private func pointsAroundCircle(rect: CGRect,
+                            radius: CGFloat,
+                            ticks: Int,
+                            adjustment: CGFloat = 0) -> [CGPoint] {
+        let anglePerTick = .pi*2/CGFloat(ticks)
+        var points = [CGPoint]()
+        for i in stride(from: ticks, to: 0, by: -1) {
+            let x = rect.midX + radius*cos(anglePerTick*CGFloat(i) + adjustment)
+            let y = rect.midY + radius*sin(anglePerTick*CGFloat(i) + adjustment)
+            points.append(CGPoint(x: x, y: y))
+        }
+        return points
+    }
+
     private func drawClock(rect: CGRect, ctx: CGContext,
                    radius: CGFloat, border: CGFloat) {
 
