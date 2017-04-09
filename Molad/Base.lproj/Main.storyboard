@@ -125,6 +125,7 @@
                     <connections>
                         <outlet property="chalakimLabel" destination="XZ2-ha-g2h" id="8j8-ku-TXr"/>
                         <outlet property="clockView" destination="yPm-Qe-yAl" id="qoE-oZ-yd4"/>
+                        <outlet property="dayLabel" destination="Mwg-JU-yZ0" id="IJ3-yq-P37"/>
                         <outlet property="hoursLabel" destination="Cx7-7h-DgV" id="oCu-9o-pc2"/>
                     </connections>
                 </viewController>
