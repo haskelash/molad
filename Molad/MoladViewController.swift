@@ -23,9 +23,9 @@ class MoladViewController: UIViewController {
     @IBOutlet private var thirdsOfSecondsLabel: UILabel!
 
     //this is really ascending, though it looks descending
-    let hebrewDays = ["ז", "א", "ב", "ג", "ד", "ה", "ו"]
+    private let hebrewDays = ["ז", "א", "ב", "ג", "ד", "ה", "ו"]
 
-    var day = 0
+    private var molad = Molad(day: 0, hours: 0, chalakim: 0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
