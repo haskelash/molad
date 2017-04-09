@@ -26,6 +26,10 @@ class MoladViewController: UIViewController {
         clockView.addTarget(self, action: #selector(valueChanged(clock:)), for: .valueChanged)
         clockView.addTarget(self, action: #selector(crossLeftToRight(clock:)), for: .crossLeftToRight)
         clockView.addTarget(self, action: #selector(crossRightToLeft(clock:)), for: .crossRightToLeft)
+
+        hoursLabel.text = String(format: "%02i", clockView.hours)
+        chalakimLabel.text = String(format: "%0004i", clockView.chalakim)
+        dayLabel.text = hebrewDays[day]
     }
 
     internal func valueChanged(clock: ClockView) {
