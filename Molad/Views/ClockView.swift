@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class ClockView: UIView {
+@IBDesignable class ClockView: UIControl {
 
     internal var chalakim: Int {
         var chalakimAngleAdusted = chalakimAngle + (.pi/2)
@@ -98,6 +98,8 @@ import UIKit
 
             let hoursDiff = (prevDragAngle - newAngleAdusted)/24
             hoursAngle -= hoursDiff
+
+            sendActions(for: .valueChanged)
         }
 
         prevDragAngle = newAngle
