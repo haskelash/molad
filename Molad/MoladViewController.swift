@@ -15,6 +15,13 @@ class MoladViewController: UIViewController {
     @IBOutlet private var hoursLabel: UILabel!
     @IBOutlet private var chalakimLabel: UILabel!
 
+    @IBOutlet private var secularDayLabel: UILabel!
+    @IBOutlet private var secularHoursLabel: UILabel!
+    @IBOutlet private var minutesLabel: UILabel!
+    @IBOutlet private var secondsLabel: UILabel!
+    @IBOutlet private var amOrPmLabel: UILabel!
+    @IBOutlet private var thirdsOfSecondsLabel: UILabel!
+
     //this is really ascending, though it looks descending
     let hebrewDays = ["ז", "א", "ב", "ג", "ד", "ה", "ו"]
 
