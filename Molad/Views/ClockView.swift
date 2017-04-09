@@ -72,6 +72,7 @@ import UIKit
         let point = gr.location(in: self)
         let diffFromCenter = CGPoint(x: point.x-bounds.midX, y: point.y-bounds.midY)
 
+        //get angle of drag point
         var newAngle = atan(diffFromCenter.y/diffFromCenter.x)
         if diffFromCenter.x < 0 {
             //arcTan onlty returns -90 to 90, so need to adjust for 90 to 270
@@ -79,10 +80,13 @@ import UIKit
         }
 
         if gr.state == .changed {
+            //get angle of rotation from last drag point
             let angleDiff = prevDragAngle - newAngle
 
+            //decrement chalakim by angle of rotation
             chalakimAngle -= angleDiff
 
+            //adjust angle of rotation for hours hand if it crossed the threshold
             var newAngleAdusted = newAngle
             if prevDragPoint.x < bounds.midX && prevDragAngle > 0 && newAngle < 0 {
                 //crossing from 270 to -90
@@ -96,9 +100,11 @@ import UIKit
                 }
             }
 
+            //decrement hours by 1/24 of angle of rotation
             let hoursDiff = (prevDragAngle - newAngleAdusted)/24
             hoursAngle -= hoursDiff
 
+            //send target action
             sendActions(for: .valueChanged)
         }
 
