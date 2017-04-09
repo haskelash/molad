@@ -11,8 +11,14 @@ import UIKit
 class MoladViewController: UIViewController {
 
     @IBOutlet private var clockView: ClockView!
+    @IBOutlet private var dayLabel: UILabel!
     @IBOutlet private var hoursLabel: UILabel!
     @IBOutlet private var chalakimLabel: UILabel!
+
+    //this is really ascending, though it looks descending
+    let hebrewDays = ["א", "ב", "ג", "ד", "ה", "ו", "ז"]
+
+    var day = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +34,15 @@ class MoladViewController: UIViewController {
     }
 
     internal func crossLeftToRight(clock: ClockView) {
+        day += 1
+        day %= 7
+        dayLabel.text = hebrewDays[day]
     }
 
     internal func crossRightToLeft(clock: ClockView) {
+        day -= 1
+        if day < 0 { day += 7 }
+        dayLabel.text = hebrewDays[day]
     }
 }
 
