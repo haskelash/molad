@@ -34,6 +34,10 @@ class MoladViewController: UIViewController {
         clockView.addTarget(self, action: #selector(crossLeftToRight(clock:)), for: .crossLeftToRight)
         clockView.addTarget(self, action: #selector(crossRightToLeft(clock:)), for: .crossRightToLeft)
 
+        molad.day = 1
+        molad.hours = clockView.hours
+        molad.chalakim = clockView.chalakim
+
         hoursLabel.text = String(format: "%02i", clockView.hours)
         chalakimLabel.text = String(format: "%0004i", clockView.chalakim)
         dayLabel.text = hebrewDays[day]
