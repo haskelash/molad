@@ -44,7 +44,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=",יום" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGD-4G-3CQ">
-                                        <rect key="frame" x="98" y="0.0" width="23.5" height="20.5"/>
+                                        <rect key="frame" x="102" y="0.0" width="23.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cx7-7h-DgV">
-                                        <rect key="frame" x="129.5" y="0.0" width="21" height="20.5"/>
+                                        <rect key="frame" x="133.5" y="0.0" width="21" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="21" id="plK-Qt-Csv"/>
                                         </constraints>
@@ -65,13 +65,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hours," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGh-6d-h8y">
-                                        <rect key="frame" x="154.5" y="0.0" width="48" height="20.5"/>
+                                        <rect key="frame" x="158.5" y="0.0" width="48" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZ2-ha-g2h">
-                                        <rect key="frame" x="206.5" y="0.0" width="42" height="20.5"/>
+                                        <rect key="frame" x="210.5" y="0.0" width="42" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="hEu-Bh-fN1"/>
                                         </constraints>
@@ -80,7 +80,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chalakim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKs-3d-YQe">
-                                        <rect key="frame" x="252.5" y="0.0" width="68" height="20.5"/>
+                                        <rect key="frame" x="256.5" y="0.0" width="68" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -99,7 +99,7 @@
                                     <constraint firstAttribute="bottom" secondItem="Mwg-JU-yZ0" secondAttribute="bottom" id="PzZ-PV-evJ"/>
                                     <constraint firstAttribute="bottom" secondItem="sx5-ps-n8L" secondAttribute="bottom" id="Vsf-Vg-PGV"/>
                                     <constraint firstItem="sx5-ps-n8L" firstAttribute="top" secondItem="hSE-Gb-Omh" secondAttribute="top" id="XwY-RU-7bi"/>
-                                    <constraint firstItem="OGD-4G-3CQ" firstAttribute="leading" secondItem="Mwg-JU-yZ0" secondAttribute="trailing" constant="4" id="aVo-s1-SgM"/>
+                                    <constraint firstItem="OGD-4G-3CQ" firstAttribute="leading" secondItem="Mwg-JU-yZ0" secondAttribute="trailing" constant="8" id="aVo-s1-SgM"/>
                                     <constraint firstAttribute="bottom" secondItem="HKs-3d-YQe" secondAttribute="bottom" id="blK-CW-fsl"/>
                                     <constraint firstItem="HKs-3d-YQe" firstAttribute="top" secondItem="hSE-Gb-Omh" secondAttribute="top" id="dDx-SJ-IBf"/>
                                     <constraint firstAttribute="bottom" secondItem="Cx7-7h-DgV" secondAttribute="bottom" id="eGg-qm-ivu"/>
