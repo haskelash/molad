@@ -105,9 +105,6 @@ import UIKit
             let oldHoursAngle = hoursAngle
             hoursAngle -= hoursDiff
 
-            //send target action
-            sendActions(for: .valueChanged)
-
             //if hours hand crossed over 0 in either direction, send a special action
             if oldHoursAngle > 265*(.pi)/180 && oldHoursAngle <= 270*(.pi)/180
                 && hoursAngle >= 270*(.pi)/180 && hoursAngle < 275*(.pi)/180 {
@@ -115,6 +112,9 @@ import UIKit
             } else if oldHoursAngle >= 270*(.pi)/180 && oldHoursAngle < 275*(.pi)/180
                 && hoursAngle > 265*(.pi)/180 && hoursAngle <= 270*(.pi)/180 {
                 sendActions(for: .crossRightToLeft)
+            } else {
+                //send regular target action
+                sendActions(for: .valueChanged)
             }
         }
 
