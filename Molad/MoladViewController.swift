@@ -10,8 +10,16 @@ import UIKit
 
 class MoladViewController: UIViewController {
 
+    @IBOutlet private var clockView: ClockView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        clockView.addTarget(self, action: #selector(valueChanged(clock:)), for: .valueChanged)
+    }
+
+    internal func valueChanged(clock: ClockView) {
+        print(String(format: "%02i:%0004i", clock.hours, clock.chalakim))
     }
 }
 

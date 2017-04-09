@@ -40,6 +40,9 @@
                             <constraint firstItem="yPm-Qe-yAl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="E6p-Xz-m2b"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clockView" destination="yPm-Qe-yAl" id="qoE-oZ-yd4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="hzo-np-fsg">
