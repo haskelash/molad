@@ -9,6 +9,37 @@
 import UIKit
 
 @IBDesignable class ClockView: UIView {
+
+    internal var chalakim: Int {
+        var chalakimAngleAdusted = chalakimAngle + (.pi/2)
+        chalakimAngleAdusted.formTruncatingRemainder(dividingBy: .pi*2)
+        if chalakimAngleAdusted == 0 { return 0 }
+
+        //adusted angle is > 0 and < 360
+        var testAngle: CGFloat = 0
+        var counter = -1
+        while testAngle < chalakimAngleAdusted {
+            testAngle += .pi*2/1080
+            counter += 1
+        }
+        return counter % 1080
+    }
+
+    internal var hours: Int {
+        var hoursAngleAdusted = hoursAngle + (.pi/2)
+        hoursAngleAdusted.formTruncatingRemainder(dividingBy: .pi*2)
+        if hoursAngleAdusted == 0 { return 0 }
+
+        //adusted angle is > 0 and < 360
+        var testAngle: CGFloat = 0
+        var counter = -1
+        while testAngle < hoursAngleAdusted {
+            testAngle += .pi*2/24
+            counter += 1
+        }
+        return counter % 24
+    }
+
     private var chalakimAngle: CGFloat = -.pi/2 {
         didSet {
             while chalakimAngle < 0 {
