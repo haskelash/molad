@@ -18,11 +18,19 @@ class MoladViewController: UIViewController {
         super.viewDidLoad()
 
         clockView.addTarget(self, action: #selector(valueChanged(clock:)), for: .valueChanged)
+        clockView.addTarget(self, action: #selector(crossLeftToRight(clock:)), for: .crossLeftToRight)
+        clockView.addTarget(self, action: #selector(crossRightToLeft(clock:)), for: .crossRightToLeft)
     }
 
     internal func valueChanged(clock: ClockView) {
         hoursLabel.text = String(format: "%02i", clock.hours)
         chalakimLabel.text = String(format: "%0004i", clock.chalakim)
+    }
+
+    internal func crossLeftToRight(clock: ClockView) {
+    }
+
+    internal func crossRightToLeft(clock: ClockView) {
     }
 }
 
