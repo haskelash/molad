@@ -21,7 +21,8 @@ class MoladViewController: UIViewController {
     }
 
     internal func valueChanged(clock: ClockView) {
-        print(String(format: "%02i:%0004i", clock.hours, clock.chalakim))
+        hoursLabel.text = String(format: "%02i", clock.hours)
+        chalakimLabel.text = String(format: "%0004i", clock.chalakim)
     }
 }
 
