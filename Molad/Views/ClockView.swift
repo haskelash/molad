@@ -11,10 +11,10 @@ import UIKit
 @IBDesignable class ClockView: UIView {
     private var chalakimAngle: CGFloat = -.pi/2 {
         didSet {
-            while chalakimAngle < -.pi/2 {
+            while chalakimAngle < 0 {
                 chalakimAngle += .pi*2
             }
-            while chalakimAngle > .pi*3/2 {
+            while chalakimAngle > .pi*2 {
                 chalakimAngle -= .pi*2
             }
             setNeedsDisplay()
@@ -23,10 +23,10 @@ import UIKit
 
     private var hoursAngle: CGFloat = 0 {
         didSet {
-            while hoursAngle < -.pi/2 {
+            while hoursAngle < 0 {
                 hoursAngle += .pi*2
             }
-            while hoursAngle > .pi*3/2 {
+            while hoursAngle > .pi*2 {
                 hoursAngle -= .pi*2
             }
         }
