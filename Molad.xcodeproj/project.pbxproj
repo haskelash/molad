@@ -13,6 +13,7 @@
 		8B1EFE3E1E917138008FBC08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1EFE3D1E917138008FBC08 /* Assets.xcassets */; };
 		8B1EFE411E917138008FBC08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1EFE3F1E917138008FBC08 /* LaunchScreen.storyboard */; };
 		8B1EFE4A1E9171C8008FBC08 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EFE491E9171C8008FBC08 /* ClockView.swift */; };
+		8BAF64EE1E9A5FE500B98A80 /* UIControlEventsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAF64ED1E9A5FE500B98A80 /* UIControlEventsExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8B1EFE401E917138008FBC08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B1EFE421E917138008FBC08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B1EFE491E9171C8008FBC08 /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockView.swift; path = Views/ClockView.swift; sourceTree = "<group>"; };
+		8BAF64ED1E9A5FE500B98A80 /* UIControlEventsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIControlEventsExtension.swift; path = Utils/UIControlEventsExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				8B1EFE381E917138008FBC08 /* MoladViewController.swift */,
 				8B1EFE3A1E917138008FBC08 /* Main.storyboard */,
 				8B1EFE481E9171B6008FBC08 /* Views */,
+				8BAF64EC1E9A5FAF00B98A80 /* Utils */,
 				8B1EFE3D1E917138008FBC08 /* Assets.xcassets */,
 				8B1EFE3F1E917138008FBC08 /* LaunchScreen.storyboard */,
 				8B1EFE421E917138008FBC08 /* Info.plist */,
@@ -73,6 +76,14 @@
 				8B1EFE491E9171C8008FBC08 /* ClockView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		8BAF64EC1E9A5FAF00B98A80 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8BAF64ED1E9A5FE500B98A80 /* UIControlEventsExtension.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +161,7 @@
 			files = (
 				8B1EFE391E917138008FBC08 /* MoladViewController.swift in Sources */,
 				8B1EFE4A1E9171C8008FBC08 /* ClockView.swift in Sources */,
+				8BAF64EE1E9A5FE500B98A80 /* UIControlEventsExtension.swift in Sources */,
 				8B1EFE371E917138008FBC08 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
