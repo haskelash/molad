@@ -72,7 +72,12 @@ class MoladViewController: UIViewController {
     }
 
     private func updateSecularLabels() {
-
+        secularDayLabel.text = molad.secularWeekday + ","
+        secularHoursLabel.text = String(format: "%02i", molad.secularHours)
+        minutesLabel.text = String(format: "%02i", molad.minutes)
+        secondsLabel.text = String(format: "%02i", molad.seconds)
+        amOrPmLabel.text = molad.pm ? "PM" : "AM"
+        thirdsOfSecondsLabel.text = "\(molad.thirdsOfSeconds)"
     }
 }
 
