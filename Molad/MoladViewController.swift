@@ -51,6 +51,7 @@ class MoladViewController: UIViewController {
 
         hoursLabel.text = String(format: "%02i", clock.hours)
         chalakimLabel.text = String(format: "%0004i", clock.chalakim)
+
         updateSecularLabels()
     }
 
