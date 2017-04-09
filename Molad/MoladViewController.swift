@@ -16,7 +16,7 @@ class MoladViewController: UIViewController {
     @IBOutlet private var chalakimLabel: UILabel!
 
     //this is really ascending, though it looks descending
-    let hebrewDays = ["א", "ב", "ג", "ד", "ה", "ו", "ז"]
+    let hebrewDays = ["ז", "א", "ב", "ג", "ד", "ה", "ו"]
 
     var day = 0
 
