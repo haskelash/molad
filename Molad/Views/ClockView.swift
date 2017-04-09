@@ -102,10 +102,20 @@ import UIKit
 
             //decrement hours by 1/24 of angle of rotation
             let hoursDiff = (prevDragAngle - newAngleAdusted)/24
+            let oldHoursAngle = hoursAngle
             hoursAngle -= hoursDiff
 
             //send target action
             sendActions(for: .valueChanged)
+
+            //if hours hand crossed over 0 in either direction, send a special action
+            if oldHoursAngle > 265*(.pi)/180 && oldHoursAngle <= 270*(.pi)/180
+                && hoursAngle >= 270*(.pi)/180 && hoursAngle < 275*(.pi)/180 {
+                print("left to right")
+            } else if oldHoursAngle >= 270*(.pi)/180 && oldHoursAngle < 275*(.pi)/180
+                && hoursAngle > 265*(.pi)/180 && hoursAngle <= 270*(.pi)/180 {
+                print("right to left")
+            }
         }
 
         prevDragAngle = newAngle
