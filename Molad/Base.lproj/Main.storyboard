@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPm-Qe-yAl" customClass="ClockView" customModule="Molad" customModuleProvider="target">
-                                <rect key="frame" x="16" y="20" width="343" height="343"/>
+                                <rect key="frame" x="16" y="162" width="343" height="343"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -35,7 +35,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSE-Gb-Omh">
-                                <rect key="frame" x="16" y="371" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="513" width="343" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Molad on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sx5-ps-n8L">
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="20.5"/>
@@ -116,10 +116,10 @@
                         <constraints>
                             <constraint firstItem="hSE-Gb-Omh" firstAttribute="top" secondItem="yPm-Qe-yAl" secondAttribute="bottom" constant="8" id="Ie0-r9-LIe"/>
                             <constraint firstItem="yPm-Qe-yAl" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="LOD-Ec-MoB"/>
+                            <constraint firstItem="yPm-Qe-yAl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TQr-cD-EL7"/>
                             <constraint firstItem="hSE-Gb-Omh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="mZs-D2-b8q"/>
                             <constraint firstItem="yPm-Qe-yAl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="r3k-UO-OcU"/>
                             <constraint firstItem="hSE-Gb-Omh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="u5q-ni-4Th"/>
-                            <constraint firstItem="yPm-Qe-yAl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wPq-TW-s1U"/>
                         </constraints>
                     </view>
                     <connections>
