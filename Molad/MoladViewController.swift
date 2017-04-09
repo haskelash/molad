@@ -41,6 +41,9 @@ class MoladViewController: UIViewController {
     }
 
     internal func valueChanged(clock: ClockView) {
+        molad.hours = clockView.hours
+        molad.chalakim = clockView.chalakim
+
         hoursLabel.text = String(format: "%02i", clock.hours)
         chalakimLabel.text = String(format: "%0004i", clock.chalakim)
         updateSecularLabels()
