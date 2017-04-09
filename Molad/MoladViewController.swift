@@ -59,12 +59,16 @@ class MoladViewController: UIViewController {
         molad.day += 1
         molad.day %= 7
         dayLabel.text = hebrewDays[molad.day]
+
+        valueChanged(clock: clock)
     }
 
     internal func crossRightToLeft(clock: ClockView) {
         molad.day -= 1
         if molad.day < 0 { molad.day += 7 }
         dayLabel.text = hebrewDays[molad.day]
+
+        valueChanged(clock: clock)
     }
 
     private func updateSecularLabels() {
