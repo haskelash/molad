@@ -56,10 +56,10 @@
 		8B1EFE351E917138008FBC08 /* Molad */ = {
 			isa = PBXGroup;
 			children = (
-				8B1EFE481E9171B6008FBC08 /* Views */,
 				8B1EFE361E917138008FBC08 /* AppDelegate.swift */,
 				8B1EFE381E917138008FBC08 /* MoladViewController.swift */,
 				8B1EFE3A1E917138008FBC08 /* Main.storyboard */,
+				8B1EFE481E9171B6008FBC08 /* Views */,
 				8B1EFE3D1E917138008FBC08 /* Assets.xcassets */,
 				8B1EFE3F1E917138008FBC08 /* LaunchScreen.storyboard */,
 				8B1EFE421E917138008FBC08 /* Info.plist */,
