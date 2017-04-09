@@ -41,12 +41,10 @@ import UIKit
         let point = gr.location(in: self)
         let diffFromCenter = CGPoint(x: point.x-bounds.midX, y: point.y-bounds.midY)
 
-        var newAngle: CGFloat!
+        var newAngle = atan(diffFromCenter.y/diffFromCenter.x)
         if diffFromCenter.x < 0 {
             //arcTan onlty returns -90 to 90, so need to adjust for 90 to 270
-            newAngle = atan(diffFromCenter.y/diffFromCenter.x) + .pi
-        } else {
-            newAngle = atan(diffFromCenter.y/diffFromCenter.x)
+            newAngle += .pi
         }
 
         if gr.state == .changed {
@@ -54,7 +52,7 @@ import UIKit
 
             chalakimAngle -= angleDiff
 
-            var newAngleAdusted = newAngle!
+            var newAngleAdusted = newAngle
             if prevDragPoint.x < bounds.midX && prevDragAngle > 0 && newAngle < 0 {
                 //crossing from 270 to -90
                 while newAngleAdusted < prevDragAngle {
