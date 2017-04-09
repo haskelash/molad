@@ -111,10 +111,10 @@ import UIKit
             //if hours hand crossed over 0 in either direction, send a special action
             if oldHoursAngle > 265*(.pi)/180 && oldHoursAngle <= 270*(.pi)/180
                 && hoursAngle >= 270*(.pi)/180 && hoursAngle < 275*(.pi)/180 {
-                print("left to right")
+                sendActions(for: .crossLeftToRight)
             } else if oldHoursAngle >= 270*(.pi)/180 && oldHoursAngle < 275*(.pi)/180
                 && hoursAngle > 265*(.pi)/180 && hoursAngle <= 270*(.pi)/180 {
-                print("right to left")
+                sendActions(for: .crossRightToLeft)
             }
         }
 
