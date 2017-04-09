@@ -40,7 +40,8 @@ class MoladViewController: UIViewController {
 
         hoursLabel.text = String(format: "%02i", clockView.hours)
         chalakimLabel.text = String(format: "%0004i", clockView.chalakim)
-        dayLabel.text = hebrewDays[day]
+        dayLabel.text = hebrewDays[molad.day]
+
         updateSecularLabels()
     }
 
@@ -54,15 +55,15 @@ class MoladViewController: UIViewController {
     }
 
     internal func crossLeftToRight(clock: ClockView) {
-        day += 1
-        day %= 7
-        dayLabel.text = hebrewDays[day]
+        molad.day += 1
+        molad.day %= 7
+        dayLabel.text = hebrewDays[molad.day]
     }
 
     internal func crossRightToLeft(clock: ClockView) {
-        day -= 1
-        if day < 0 { day += 7 }
-        dayLabel.text = hebrewDays[day]
+        molad.day -= 1
+        if molad.day < 0 { molad.day += 7 }
+        dayLabel.text = hebrewDays[molad.day]
     }
 
     private func updateSecularLabels() {
