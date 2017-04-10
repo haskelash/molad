@@ -25,7 +25,8 @@ class MoladViewController: UIViewController {
     //this is really ascending, though it looks descending
     private let hebrewDays = ["ז", "א", "ב", "ג", "ד", "ה", "ו"]
 
-    private var molad = Molad(day: 0, hours: 0, chalakim: 0)
+    private var molad: Molad!
+    private var year: Year!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +35,8 @@ class MoladViewController: UIViewController {
         clockView.addTarget(self, action: #selector(crossLeftToRight(clock:)), for: .crossLeftToRight)
         clockView.addTarget(self, action: #selector(crossRightToLeft(clock:)), for: .crossRightToLeft)
 
-        molad.day = 1
-        molad.hours = clockView.hours
-        molad.chalakim = clockView.chalakim
+        molad = Molad(1, clockView.hours, clockView.chalakim)
+        year = Year(tishrei: molad, positionInCycle: .before)
 
         hoursLabel.text = String(format: "%02i", clockView.hours)
         chalakimLabel.text = String(format: "%0004i", clockView.chalakim)
