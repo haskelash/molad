@@ -30,6 +30,10 @@ class MoladViewController: UIViewController {
     private var molad: Molad!
     private var year: Year!
 
+    private var relationToLeapYear: RelationToLeapYear {
+        return RelationToLeapYear(rawValue: leapYearControl.selectedSegmentIndex)!
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +42,7 @@ class MoladViewController: UIViewController {
         clockView.addTarget(self, action: #selector(crossRightToLeft(clock:)), for: .crossRightToLeft)
 
         molad = Molad(1, clockView.hours, clockView.chalakim)
-        year = Year(tishrei: molad, positionInCycle: .before)
+        year = Year(tishrei: molad, positionInCycle: relationToLeapYear)
 
         hoursLabel.text = String(format: "%02i", clockView.hours)
         chalakimLabel.text = String(format: "%0004i", clockView.chalakim)

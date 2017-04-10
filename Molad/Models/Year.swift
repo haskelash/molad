@@ -112,6 +112,6 @@ class Year {
     }
 }
 
-enum RelationToLeapYear {
-    case before, between, after, leapYear
+enum RelationToLeapYear: Int {
+    case after, before, between, leapYear
 }
