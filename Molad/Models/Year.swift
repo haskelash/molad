@@ -8,9 +8,14 @@
 
 import Foundation
 
-struct Year {
+class Year {
     var tishrei: Molad
     var positionInCycle: RelationToLeapYear
+
+    init(tishrei: Molad, positionInCycle: RelationToLeapYear) {
+        self.tishrei = tishrei
+        self.positionInCycle = positionInCycle
+    }
 
     var kviah: (day: Int, length: Int, isLeapYear: Bool) {
         var firstTwoValues: (day: Int, length: Int)!

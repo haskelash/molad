@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Molad {
+class Molad {
     var day: Int
     var hours: Int
     var chalakim: Int
