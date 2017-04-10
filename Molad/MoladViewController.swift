@@ -73,6 +73,10 @@ class MoladViewController: UIViewController {
         valueChanged(clock: clock)
     }
 
+    @IBAction private func toggleLeapYear(control: UISegmentedControl) {
+        year.positionInCycle = relationToLeapYear
+    }
+
     private func updateSecularLabels() {
         secularDayLabel.text = molad.secularWeekday + ","
         secularHoursLabel.text = String(format: "%02i", molad.secularHours)
