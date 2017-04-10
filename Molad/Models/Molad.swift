@@ -13,6 +13,43 @@ struct Molad {
     var hours: Int
     var chalakim: Int
 
+    init(_ day: Int, _ hours: Int, _ chalakim: Int) {
+        self.day = day
+        self.hours = hours
+        self.chalakim = chalakim
+    }
+
+    static func > (left: Molad, right: Molad) -> Bool {
+        if left.day > right.day { return true}
+        else if right.day > left.day { return false }
+        else {
+            if left.hours > right.hours { return true }
+            else if right.hours > left.hours { return false }
+            else {
+                if left.chalakim > right.chalakim { return true }
+                else { return false }
+            }
+        }
+    }
+
+    static func == (left: Molad, right: Molad) -> Bool {
+        return left.day == right.day
+            && left.hours == right.hours
+            && left.chalakim == right.chalakim ? true : false
+    }
+
+    static func >= (left: Molad, right: Molad) -> Bool {
+        return left > right || left == right ? true : false
+    }
+
+    static func < (left: Molad, right: Molad) -> Bool {
+        return right > left ? true : false
+    }
+
+    static func <= (left: Molad, right: Molad) -> Bool {
+        return right >= left ? true : false
+    }
+
     private let secularDays = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]
 
     var secularWeekday: String {
