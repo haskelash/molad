@@ -11,6 +11,8 @@ import UIKit
 class MoladViewController: UIViewController {
 
     @IBOutlet private var clockView: ClockView!
+    @IBOutlet private var leapYearControl: UISegmentedControl!
+
     @IBOutlet private var dayLabel: UILabel!
     @IBOutlet private var hoursLabel: UILabel!
     @IBOutlet private var chalakimLabel: UILabel!

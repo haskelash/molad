@@ -272,6 +272,7 @@
                         <outlet property="clockView" destination="yPm-Qe-yAl" id="qoE-oZ-yd4"/>
                         <outlet property="dayLabel" destination="Mwg-JU-yZ0" id="IJ3-yq-P37"/>
                         <outlet property="hoursLabel" destination="Cx7-7h-DgV" id="oCu-9o-pc2"/>
+                        <outlet property="leapYearControl" destination="9Jt-Nr-y44" id="hyI-bQ-NQm"/>
                         <outlet property="minutesLabel" destination="t4V-hP-fkG" id="LNa-gs-LIM"/>
                         <outlet property="secondsLabel" destination="ze8-t5-Yvi" id="gmC-A5-3BF"/>
                         <outlet property="secularDayLabel" destination="Ci0-h3-IkL" id="Fiz-Fv-0rM"/>
