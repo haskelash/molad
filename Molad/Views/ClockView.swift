@@ -72,6 +72,9 @@ import UIKit
         let point = gr.location(in: self)
         let diffFromCenter = CGPoint(x: point.x-bounds.midX, y: point.y-bounds.midY)
 
+        //skip if right on center
+        guard diffFromCenter != .zero else { return }
+
         //get angle of drag point
         var newAngle = atan(diffFromCenter.y/diffFromCenter.x)
         if diffFromCenter.x < 0 {
