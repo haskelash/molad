@@ -16,6 +16,8 @@
 		8B90FBCB1E9B63DB0065BF3E /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90FBCA1E9B63DB0065BF3E /* Year.swift */; };
 		8BAF64EE1E9A5FE500B98A80 /* UIControlEventsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAF64ED1E9A5FE500B98A80 /* UIControlEventsExtension.swift */; };
 		8BAF64F11E9A6ED800B98A80 /* Molad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAF64F01E9A6ED800B98A80 /* Molad.swift */; };
+		8BD13BB21EDCC2670090AE1B /* ClockFaceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD13BB11EDCC2670090AE1B /* ClockFaceMethods.swift */; };
+		8BD13BB41EDCC2870090AE1B /* ClockTextMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD13BB31EDCC2870090AE1B /* ClockTextMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		8B90FBCA1E9B63DB0065BF3E /* Year.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Year.swift; path = Models/Year.swift; sourceTree = "<group>"; };
 		8BAF64ED1E9A5FE500B98A80 /* UIControlEventsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIControlEventsExtension.swift; path = Utils/UIControlEventsExtension.swift; sourceTree = "<group>"; };
 		8BAF64F01E9A6ED800B98A80 /* Molad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Molad.swift; path = Models/Molad.swift; sourceTree = "<group>"; };
+		8BD13BB11EDCC2670090AE1B /* ClockFaceMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockFaceMethods.swift; path = Views/ClockFaceMethods.swift; sourceTree = "<group>"; };
+		8BD13BB31EDCC2870090AE1B /* ClockTextMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockTextMethods.swift; path = Views/ClockTextMethods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				8B1EFE491E9171C8008FBC08 /* ClockView.swift */,
+				8BD13BB11EDCC2670090AE1B /* ClockFaceMethods.swift */,
+				8BD13BB31EDCC2870090AE1B /* ClockTextMethods.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -176,8 +182,10 @@
 				8B1EFE391E917138008FBC08 /* MoladViewController.swift in Sources */,
 				8BAF64F11E9A6ED800B98A80 /* Molad.swift in Sources */,
 				8B1EFE4A1E9171C8008FBC08 /* ClockView.swift in Sources */,
+				8BD13BB21EDCC2670090AE1B /* ClockFaceMethods.swift in Sources */,
 				8BAF64EE1E9A5FE500B98A80 /* UIControlEventsExtension.swift in Sources */,
 				8B90FBCB1E9B63DB0065BF3E /* Year.swift in Sources */,
+				8BD13BB41EDCC2870090AE1B /* ClockTextMethods.swift in Sources */,
 				8B1EFE371E917138008FBC08 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
