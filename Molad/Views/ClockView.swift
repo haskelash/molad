@@ -52,7 +52,7 @@ import UIKit
         }
     }
 
-    private var hoursAngle: CGFloat = 0 {
+    private var hoursAngle: CGFloat = .pi {
         didSet {
             while hoursAngle < 0 {
                 hoursAngle += .pi*2
