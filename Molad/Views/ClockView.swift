@@ -67,6 +67,7 @@ import UIKit
     private var prevDragPoint = CGPoint(x: 0, y: 0)
     private var chalakimHand = CAShapeLayer()
     private var hourHand = CAShapeLayer()
+    private var weekdayLayer: WeekdayLayer!
 
     @IBAction func drag(gr: UIPanGestureRecognizer) {
         let point = gr.location(in: self)
@@ -143,6 +144,9 @@ import UIKit
         chalakimHand.strokeColor = UIColor.red.cgColor
         chalakimHand.lineWidth = 2
         layer.addSublayer(chalakimHand)
+
+        weekdayLayer = WeekdayLayer(frame: bounds)
+        layer.addSublayer(weekdayLayer)
     }
 
     override func draw(_ rect: CGRect) {
@@ -172,7 +176,6 @@ import UIKit
         return points
     }
 
-
     private func drawHands(rect: CGRect, ctx: CGContext, radius: CGFloat) {
         //chalakim hand
         let handPath = CGMutablePath()
@@ -188,5 +191,9 @@ import UIKit
         hourHandPath.addLine(to: CGPoint(x: rect.midX + 0.6*radius*cos(hoursAngle),
                                          y: rect.midY + 0.6*radius*sin(hoursAngle)))
         hourHand.path = hourHandPath
+    }
+
+    @IBAction internal func goToNextWeekday(_: Any) {
+        weekdayLayer.rotate()
     }
 }
