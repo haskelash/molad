@@ -40,7 +40,7 @@ import UIKit
         return counter % 24
     }
 
-    private var chalakimAngle: CGFloat = -.pi/2 {
+    var chalakimAngle: CGFloat = -.pi/2 {
         didSet {
             while chalakimAngle < 0 {
                 chalakimAngle += .pi*2
@@ -52,7 +52,7 @@ import UIKit
         }
     }
 
-    private var hoursAngle: CGFloat = .pi {
+    var hoursAngle: CGFloat = .pi {
         didSet {
             while hoursAngle < 0 {
                 hoursAngle += .pi*2
@@ -137,6 +137,7 @@ import UIKit
     }
 
     private func setUpLayers() {
+        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(drag(gr:))))
         hourHand.strokeColor = UIColor.black.cgColor
         hourHand.lineWidth = 4
         layer.addSublayer(hourHand)
@@ -145,7 +146,7 @@ import UIKit
         chalakimHand.lineWidth = 2
         layer.addSublayer(chalakimHand)
 
-        weekdayLayer = WeekdayLayer(frame: bounds)
+        weekdayLayer = WeekdayLayer()
         layer.addSublayer(weekdayLayer)
     }
 
@@ -160,6 +161,8 @@ import UIKit
         drawChalakim(rect: rect, ctx: ctx, radius: radius)
         drawHours(rect: rect, ctx: ctx, radius: radius)
         drawHands(rect: rect, ctx: ctx, radius: radius)
+        weekdayLayer.frame = bounds
+        weekdayLayer.draw()
     }
 
     internal func pointsAroundCircle(rect: CGRect,

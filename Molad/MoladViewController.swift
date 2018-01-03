@@ -11,6 +11,7 @@ import UIKit
 class MoladViewController: UIViewController {
 
     @IBOutlet private var clockView: ClockView!
+    @IBOutlet private var rightClockView: ClockView!
     @IBOutlet private var leapYearControl: UISegmentedControl!
 
     @IBOutlet private var dayLabel: UILabel!
@@ -41,6 +42,10 @@ class MoladViewController: UIViewController {
         clockView.addTarget(self, action: #selector(crossLeftToRight(clock:)), for: .crossLeftToRight)
         clockView.addTarget(self, action: #selector(crossRightToLeft(clock:)), for: .crossRightToLeft)
 
+        rightClockView.addTarget(self, action: #selector(valueChanged(clock:)), for: .valueChanged)
+        rightClockView.addTarget(self, action: #selector(crossLeftToRight(clock:)), for: .crossLeftToRight)
+        rightClockView.addTarget(self, action: #selector(crossRightToLeft(clock:)), for: .crossRightToLeft)
+
         molad = Molad(1, clockView.hours, clockView.chalakim)
         year = Year(tishrei: molad, positionInCycle: relationToLeapYear)
 
@@ -52,6 +57,14 @@ class MoladViewController: UIViewController {
     }
 
     internal func valueChanged(clock: ClockView) {
+        if clock === clockView {
+            rightClockView.hoursAngle = clockView.hoursAngle + 1
+            rightClockView.chalakimAngle = clockView.chalakimAngle - 1
+        } else if clock === rightClockView {
+            clockView.hoursAngle = rightClockView.hoursAngle - 1
+            clockView.chalakimAngle = rightClockView.chalakimAngle + 1
+        }
+
         molad.hours = clockView.hours
         molad.chalakim = clockView.chalakim
 

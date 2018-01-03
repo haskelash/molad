@@ -9,17 +9,11 @@
 import UIKit
 
 class WeekdayLayer: CALayer {
-    private let textWheel = TextWheel()
     private var current = 0
+    private let textWheel = TextWheel()
+    private let outlineLayer = CAShapeLayer()
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    init(frame: CGRect) {
-        super.init()
-
-        self.frame  = frame
+    func draw() {
         textWheel.frame = bounds
         addSublayer(textWheel)
         textWheel.setNeedsDisplay()
@@ -60,7 +54,6 @@ class WeekdayLayer: CALayer {
         mask = maskLayer
 
         //draw black outline around mask
-        let outlineLayer = CAShapeLayer()
         outlineLayer.path = wedgePath()
         outlineLayer.lineWidth = 4
         outlineLayer.fillColor = UIColor.clear.cgColor
