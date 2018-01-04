@@ -18,11 +18,12 @@ class WeekdayLayer: CALayer {
         addSublayer(textWheel)
         textWheel.setNeedsDisplay()
 
-        func wedgePath() -> CGPath {
+        func wedgePath(startRatio: CGFloat = 0.3,
+                       endRatio: CGFloat = 0.6,
+                       wedgeAngle: CGFloat = -.pi/6) -> CGPath {
             let path = CGMutablePath()
-            let wedgeAngle: CGFloat = -.pi/6
-            let wedgeStart: CGFloat = 50
-            let wedgeEnd: CGFloat = 100
+            let wedgeStart: CGFloat = startRatio * bounds.width/2
+            let wedgeEnd: CGFloat = endRatio * bounds.width/2
 
             //start at r = wedgeStart, ø = wedgeAngle
             path.move(to: CGPoint(x: bounds.midX + wedgeStart*cos(wedgeAngle),
@@ -89,7 +90,7 @@ class WeekdayLayer: CALayer {
                 let lineBounds = CTLineGetBoundsWithOptions(line, .useOpticalBounds)
 
                 ctx.setTextDrawingMode(.stroke)
-                let textX = (bounds.maxX - 100 - lineBounds.midX)
+                let textX = (bounds.maxX - 150 - lineBounds.midX)
                 let textY = (bounds.midY - lineBounds.midY)
                 ctx.textPosition = CGPoint(x: textX, y: textY)
                 CTLineDraw(line, ctx)
