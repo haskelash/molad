@@ -10,17 +10,28 @@ import UIKit
 
 class WeekdayLayer: CALayer {
     private var current = 0
-    private let textWheel = TextWheel()
+    private let textWheel: TextWheel!
     private let outlineLayer = CAShapeLayer()
+    let startRatio: CGFloat = 0.2
+    let endRatio: CGFloat = 0.5
 
-    func draw() {
-        textWheel.frame = bounds
+    override init() {
+        textWheel = TextWheel()
+        textWheel.startRatio = startRatio
+        textWheel.endRatio = endRatio
+        super.init()
         addSublayer(textWheel)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func draw(in ctx: CGContext) {
+        textWheel.frame = bounds
         textWheel.setNeedsDisplay()
 
-        func wedgePath(startRatio: CGFloat = 0.3,
-                       endRatio: CGFloat = 0.6,
-                       wedgeAngle: CGFloat = -.pi/6) -> CGPath {
+        func wedgePath(wedgeAngle: CGFloat = -.pi/6) -> CGPath {
             let path = CGMutablePath()
             let wedgeStart: CGFloat = startRatio * bounds.width/2
             let wedgeEnd: CGFloat = endRatio * bounds.width/2
@@ -72,17 +83,21 @@ class WeekdayLayer: CALayer {
     }
 
     private class TextWheel: CALayer {
+        var startRatio: CGFloat = 0
+        var endRatio: CGFloat = 1
+
         override func draw(in ctx: CGContext) {
             //flip context for text
             ctx.translateBy(x: 0, y: bounds.height)
             ctx.scaleBy(x: 1.0, y: -1.0)
 
             let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-            let dayFont = UIFont(name: "Helvetica Light", size: 12)
+            let dayFont = UIFont(name: "Helvetica Light", size: 11)
             let dayAttrs = [NSFontAttributeName: dayFont,
                             NSForegroundColorAttributeName: UIColor.black] as CFDictionary
 
             //draw weekday text rotated at 1/7 of a cirlce intervals
+            let midWedge = bounds.midX + ((startRatio + endRatio)/2 * bounds.width/2)
             for day in days {
                 let dayStr = day as CFString
                 let text = CFAttributedStringCreate(nil, dayStr, dayAttrs)!
@@ -90,7 +105,7 @@ class WeekdayLayer: CALayer {
                 let lineBounds = CTLineGetBoundsWithOptions(line, .useOpticalBounds)
 
                 ctx.setTextDrawingMode(.stroke)
-                let textX = (bounds.maxX - 150 - lineBounds.midX)
+                let textX = (midWedge - lineBounds.midX)
                 let textY = (bounds.midY - lineBounds.midY)
                 ctx.textPosition = CGPoint(x: textX, y: textY)
                 CTLineDraw(line, ctx)

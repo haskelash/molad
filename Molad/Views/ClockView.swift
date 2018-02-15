@@ -145,9 +145,6 @@ import UIKit
         chalakimHand.strokeColor = UIColor.red.cgColor
         chalakimHand.lineWidth = 2
         layer.addSublayer(chalakimHand)
-
-        weekdayLayer = WeekdayLayer()
-        layer.addSublayer(weekdayLayer)
     }
 
     override func draw(_ rect: CGRect) {
@@ -161,8 +158,14 @@ import UIKit
         drawChalakim(rect: rect, ctx: ctx, radius: radius)
         drawHours(rect: rect, ctx: ctx, radius: radius)
         drawHands(rect: rect, ctx: ctx, radius: radius)
-        weekdayLayer.frame = bounds
-        weekdayLayer.draw()
+
+        //set up weekday layer
+        if (weekdayLayer == nil) {
+            weekdayLayer = WeekdayLayer()
+            layer.addSublayer(weekdayLayer)
+            weekdayLayer.frame = bounds
+            weekdayLayer.setNeedsDisplay()
+        }
     }
 
     internal func pointsAroundCircle(rect: CGRect,
